@@ -1,150 +1,106 @@
-🚦 Smart Traffic Light Control System
-📌 Overview
-This project presents a smart traffic light control system that dynamically adjusts signal timings based on real-time traffic density. The system uses computer vision (OpenCV & YOLO) for vehicle detection and an Arduino microcontroller for controlling traffic signals.
+# 🚦 Smart Traffic Light Control System
 
-🎯 Features
-🚗 Real-time vehicle detection using camera
+## 📌 Overview
+This project presents a smart traffic light control system that dynamically adjusts signal timings based on real-time traffic density. It uses computer vision techniques (OpenCV & YOLO) for vehicle detection and an Arduino microcontroller to control traffic signals.
 
-🧠 AI-based detection using YOLO
+---
 
-⚡ Dynamic traffic signal control
+## 🎯 Features
+- Real-time vehicle detection using camera
+- AI-based detection using YOLOv8
+- Dynamic traffic signal control
+- Arduino-based LED traffic system
+- Traffic density comparison (Road A vs Road B)
+- Stable signal switching using smoothing
 
-🔌 Arduino-based LED signal system
+---
 
-📊 Traffic density comparison (Road A vs Road B)
+## 🏗️ System Architecture
+- Camera (Video Input)
+- Image Processing (OpenCV / YOLO)
+- Vehicle Detection & Counting
+- Decision-Making Logic
+- Arduino Controller
+- Traffic Light LEDs
 
-🔄 Stable signal switching with smoothing
+---
 
-🏗️ System Architecture
-The system consists of:
+## ⚙️ Tech Stack
+- Python
+- OpenCV
+- YOLOv8 (Ultralytics)
+- Arduino
+- Serial Communication
 
-Camera (video input)
+---
 
-Image processing (OpenCV / YOLO)
-
-Vehicle detection & counting
-
-Decision-making logic
-
-Arduino controller
-
-Traffic light LEDs
-
-⚙️ Tech Stack
-Python
-
-OpenCV
-
-YOLOv8 (Ultralytics)
-
-Arduino
-
-Serial Communication
-
-📁 Project Structure
+## 📁 Project Structure
 traffic-light-project/
 │
-├── arduino/              # Arduino code
-├── detection/            # OpenCV detection
-├── yolo_detection/       # YOLO-based detection
-├── camera_test/          # Camera testing scripts
-├── requirements.txt      # Python dependencies
+├── arduino/ # Arduino code
+├── detection/ # OpenCV detection
+├── yolo_detection/ # YOLO-based detection
+├── camera_test/ # Camera testing scripts
+├── requirements.txt # Python dependencies
 ├── README.md
-🚀 How to Run
-🔹 1. Clone Repository
-git clone https://github.com/YOUR_USERNAME/traffic-light-yolo.git
-cd traffic-light-yolo
-🔹 2. Create Virtual Environment
-python -m venv .venv
-.venv\Scripts\activate
-🔹 3. Install Dependencies
-pip install -r requirements.txt
-🔹 4. Run Detection
-python detection/vehicle_detection.py
-OR (YOLO version):
+## 🔌 Arduino Setup
+- Road A LEDs → Pins 8, 9, 10  
+- Road B LEDs → Pins 5, 6, 7  
+- Upload Arduino code before running Python  
+- Set correct COM port in Python code  
 
-python yolo_detection/yolo_test.py
-🔌 Arduino Setup
-Connect LEDs:
+---
 
-Road A → Pins 8, 9, 10
+## 🧠 Working Logic
+- Detect vehicles using camera
+- Count vehicles on Road A and Road B
+- Compare traffic density:
+  - A > B → A GREEN, B RED
+  - B > A → B GREEN, A RED
+  - Equal → BOTH YELLOW
+- Send signal to Arduino via serial communication
 
-Road B → Pins 5, 6, 7
+---
 
-Upload Arduino code
+## 📊 Results
+- Accurate vehicle detection using OpenCV and YOLO
+- Stable and smooth traffic signal switching
+- Real-time system performance achieved
+- Efficient traffic flow management
 
-Ensure correct COM port in Python
+---
 
-🧠 Working Logic
-Detect vehicles on both roads
+## ⚠️ Limitations
+- YOLO may misclassify toy vehicles
+- Lighting conditions affect detection accuracy
+- Requires proper camera positioning
 
-Count vehicles (A & B)
+---
 
-Compare traffic density:
+## 🔮 Future Improvements
+- Train custom YOLO model
+- Improve detection accuracy
+- Add IoT/cloud integration
+- Expand to multi-lane traffic system
 
-A > B → A GREEN, B RED
+---
 
-B > A → B GREEN, A RED
+## 👥 Contributors
+- Arnav Singh  
+- Ayush Kumar Bariyar  
+- Aditi Prajapati  
+- Ananya Kumari  
 
-Equal → BOTH YELLOW
+---
 
-Send signal to Arduino
+## 📚 References
+1. Smart Traffic Signal Control Using Computer Vision (IEEE, 2019)  
+2. Traffic Density Estimation Using Image Processing (IEEE, 2018)  
+3. Real-Time Vehicle Detection Using Deep Learning (IEEE, 2020)  
+4. IoT-Based Adaptive Traffic Signal Control (2020)  
+5. Environmental Benefits of Adaptive Traffic Systems (2020)  
 
-📊 Results
-Accurate vehicle detection using OpenCV and YOLO
+---
 
-Smooth traffic signal switching
-
-Improved traffic flow efficiency
-
-Stable real-time performance
-
-⚠️ Limitations
-YOLO may misclassify toy vehicles
-
-Lighting conditions affect detection
-
-Requires camera calibration
-
-🔮 Future Improvements
-Train custom YOLO model for higher accuracy
-
-Deploy on real traffic datasets
-
-Add IoT/cloud integration
-
-Multi-lane expansion
-
-👥 Contributors
-Arnav Singh
-
-Ayush Kumar Bariyar
-
-Aditi Prajapati
-
-Ananya Kumari
-
-📚 References
-Smart Traffic Signal Control Using Computer Vision (IEEE, 2019)
-
-Traffic Density Estimation Using Image Processing (IEEE, 2018)
-
-Real-Time Vehicle Detection Using Deep Learning (IEEE, 2020)
-
-IoT-Based Adaptive Traffic Signal Control (2020)
-
-Environmental Benefits of Adaptive Traffic Systems (2020)
-
-⭐ Final Note
-This project demonstrates how AI + Embedded Systems can be combined to build intelligent and efficient traffic management solutions.
-
-🔥 DONE
-👉 This README is:
-
-Clean ✅
-
-Professional ✅
-
-Panel-impressive ✅
-
-GitHub-ready ✅
+## ⭐ Final Note
+This project demonstrates how AI and embedded systems can be combined to create intelligent traffic management solutions.
